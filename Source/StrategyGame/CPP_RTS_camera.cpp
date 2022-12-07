@@ -262,9 +262,9 @@ void ACPP_RTS_camera::CSetScrollingLocation(float coef)
 	FVector End = CapsuleCollision->GetComponentToWorld().GetLocation();
 	End = FVector(End.X, End.Y, End.Z - 1000.0f);
 	GetWorld()->LineTraceSingleByChannel(LineTraceHit, Start, End, ECC_Visibility, FCollisionQueryParams());
-	if (IsValid(LineTraceHit.Actor.Get()))
+	if (IsValid(LineTraceHit.GetActor()))
 	{
-		if (LineTraceHit.Actor->GetClass()->GetName() == FString("Landscape"))
+		if (LineTraceHit.GetActor()->GetClass()->GetName() == FString("Landscape"))
 		{
 			SetActorLocation(FVector(GetActorLocation().X, GetActorLocation().Y, LineTraceHit.Location.Z));
 		}

@@ -115,7 +115,7 @@ bool AWarUnit::GetActorPosInScreenSpace(APlayerController& Player, FVector2D& Ou
 	{
 		// get the projection data
 		FSceneViewProjectionData ProjectionData;
-		if (LP->GetProjectionData(LP->ViewportClient->Viewport, eSSP_FULL, /*out*/ ProjectionData))
+		if (LP->GetProjectionData(LP->ViewportClient->Viewport, ProjectionData))
 		{
 			FMatrix const ViewProjectionMatrix = ProjectionData.ComputeViewProjectionMatrix();
 			const bool bResult = FSceneView::ProjectWorldToScreen(WorldPosition, ProjectionData.GetConstrainedViewRect(), ViewProjectionMatrix, OutScreenPos);
