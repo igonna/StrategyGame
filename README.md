@@ -1,2 +1,3 @@
 # StrategyGame
-strategy
+
+Unreal Engine RTS game.
